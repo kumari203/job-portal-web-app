@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<!-- USERS TABLE -->
+<h4 class="mt-4">Manage Users</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th width="220px">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+
+            <td>
+                <!-- Change roles -->
+                <div class="btn-group">
+                    <a class="btn btn-sm btn-warning"
+                       href="{{ url_for('change_role', user_id=user.id, new_role='admin') }}">
+                        Make Admin
+                    </a>
+                    <a class="btn btn-sm btn-info"
+                       href="{{ url_for('change_role', user_id=user.id, new_role='employer') }}">
+                        Make Employer
+                    </a>
+                    <a class="btn btn-sm btn-secondary"
+                       href="{{ url_for('change_role', user_id=user.id, new_role='jobseeker') }}">
+                        Make Jobseeker
+                    </a>
+                </div>
+
+                <!-- Delete user -->
+                <a class="btn btn-sm btn-danger mt-1"
+                   href="{{ url_for('delete_user', user_id=user.id) }}"
+                   onclick="return confirm('Are you sure?')">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<hr>
+
+<!-- JOBS TABLE -->
+<h4 class="mt-4">Manage Jobs</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Salary</th>
+            <th>Posted By</th>
+            <th width="150px">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.id }}</td>
+            <td>{{ job.title }}</td>
+            <td>{{ job.company }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.salary }} LPA</td>
+            <td>{{ job.employer_id }}</td>
+
+            <td>
+                <a href="{{ url_for('admin_delete_job', job_id=job.id) }}"
+                   class="btn btn-sm btn-danger"
+                   onclick="return confirm('Are you sure?');">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

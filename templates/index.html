@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="p-4 bg-light rounded shadow">
+
+    {% if not current_user.is_authenticated %}
+        <h2>Welcome to Job Portal</h2>
+        <p>Please login or register to continue.</p>
+
+    {% else %}
+        {% if current_user.role == 'admin' %}
+            <h2>Welcome Admin</h2>
+            <p>Go to your admin dashboard.</p>
+
+        {% elif current_user.role == 'employer' %}
+            <h2>Welcome Employer</h2>
+            <p>You can post jobs and manage your listings.</p>
+
+        {% elif current_user.role == 'jobseeker' %}
+            <h2>Welcome Job Seeker</h2>
+            <p>Browse and apply for jobs.</p>
+        {% endif %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

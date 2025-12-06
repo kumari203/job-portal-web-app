@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4">Post a New Job</h2>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.company.label(class="form-label") }}
+        {{ form.company(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.salary.label(class="form-label") }}
+        {{ form.salary(class="form-control") }}
+        <small class="text-muted">Enter salary in LPA (e.g., 6 for 6 LPA)</small>
+    </div>
+
+    <div class="mb-3">
+        {{ form.location.label(class="form-label") }}
+        {{ form.location(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.description.label(class="form-label") }}
+        {{ form.description(class="form-control") }}
+    </div>
+
+
+    {{ form.submit(class="btn btn-success") }}
+</form>
+
+{% endblock %}
+

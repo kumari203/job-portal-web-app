@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Employer Dashboard</h2>
+
+    <a href="{{ url_for('post_job') }}" class="btn btn-primary mb-3">
+        + Post New Job
+    </a>
+
+    {% if jobs %}
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Salary (LPA)</th>
+                <th>Posted On</th>
+                <th>Applicants</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.title }}</td>
+                <td>{{ job.company }}</td>
+                <td>{{ job.location }}</td>
+
+                <!-- Show salary directly -->
+                <td>{{ job.salary }} LPA</td>
+
+                <td>{{ job.posted_at.strftime('%Y-%m-%d') }}</td>
+                <td>{{ job.applications|length }}</td>
+                <td>
+                    <a href="{{ url_for('edit_job', job_id=job.id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{{ url_for('employer_delete_job', job_id=job.id) }}"
+                       onclick="return confirm('Delete this job?')"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info">No jobs posted yet.</div>
+    {% endif %}
+</div>
+
+{% endblock %}
+

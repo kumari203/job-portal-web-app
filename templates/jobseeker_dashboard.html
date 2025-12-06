@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4">Job Seeker Dashboard</h2>
+
+<!-- Search Filters -->
+<form method="GET" class="mb-4">
+    <div class="row">
+
+        <!-- Keyword -->
+        <div class="col-md-3 mb-2">
+            <input type="text" name="q" class="form-control" 
+                   placeholder="Search job title or description..." 
+                   value="{{ search_query }}">
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-3 mb-2">
+            <input type="text" name="location" class="form-control" 
+                   placeholder="Location" 
+                   value="{{ selected_location }}">
+        </div>
+
+        <!-- Category -->
+        <div class="col-md-3 mb-2">
+            <input type="text" name="category" class="form-control" 
+                   placeholder="Category (IT, Finance, HR...)" 
+                   value="{{ selected_category }}">
+        </div>
+
+        <!-- Company -->
+        <div class="col-md-3 mb-2">
+            <input type="text" name="company" class="form-control" 
+                   placeholder="Company" 
+                   value="{{ selected_company }}">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary mt-2">Search</button>
+</form>
+
+<!-- Job Listings -->
+<div class="row">
+    {% for job in jobs %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow">
+            <div class="card-body">
+
+                <h5 class="card-title">{{ job.title }}</h5>
+
+                <p class="card-text"><strong>Company:</strong> {{ job.company }}</p>
+
+                <p class="card-text"><strong>Location:</strong> {{ job.location }}</p>
+
+                {% if job.category %}
+                <p class="card-text"><strong>Category:</strong> {{ job.category }}</p>
+                {% endif %}
+
+                {% if job.salary %}
+                <!-- Convert stored INR salary to LPA -->
+                <p class="card-text">
+                    <strong>Salary:</strong> {{ job.salary }} LPA
+                </p>
+                {% endif %}
+
+                <p>{{ job.description[:120] }}...</p>
+
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="btn btn-success">
+                    Apply
+                </a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

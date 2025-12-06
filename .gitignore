@@ -1,0 +1,16 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Instance folder (Flask uploads DB here sometimes)
+instance/
+
+# SQLite database file
+app.db
+

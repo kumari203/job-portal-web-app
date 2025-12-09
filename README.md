@@ -97,6 +97,7 @@ git clone https://github.com/yourusername/job-portal-web-app.git
 cd job-portal-web-app
 
 2️⃣ Create Virtual Environment
+
 python -m venv venv
 
 

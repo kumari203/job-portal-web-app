@@ -5,6 +5,7 @@ This platform allows employers to post/manage jobs and job seekers to search and
 It also includes Admin controls, authentication, and dashboard interfaces.
 
 📌 Features
+
 👤 User Authentication
 
 Register (Admin / Employer / Job Seeker)

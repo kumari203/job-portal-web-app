@@ -143,7 +143,9 @@ Open your browser and go to:
 Create a .env in the project root and add:
 
 SECRET_KEY=your_secret_key_here
+
 MAIL_USERNAME=your_email
+
 MAIL_PASSWORD=your_password   # App password if using Gmail
 
 📸 Screenshots

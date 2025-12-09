@@ -113,9 +113,11 @@ Mac / Linux
 source venv/bin/activate
 
 3️⃣ Install Dependencies
+
 pip install -r requirements.txt
 
 4️⃣ Run Database Migrations
+
 flask db upgrade
 
 
@@ -124,6 +126,7 @@ or
 python app.py
 
 5️⃣ Start the Application
+
 flask run
 
 
@@ -144,6 +147,7 @@ MAIL_USERNAME=your_email
 MAIL_PASSWORD=your_password   # App password if using Gmail
 
 📸 Screenshots
+
 🛡️ Admin Dashboard
 View 1
 

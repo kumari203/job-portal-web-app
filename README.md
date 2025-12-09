@@ -79,5 +79,45 @@ Create a .env file in the project root and add:
 SECRET_KEY=your_secret_key_here
 MAIL_USERNAME=your_email
 MAIL_PASSWORD=your_password(app password if gmail )
+📸 Screenshots
+Below are the screenshots of the Job Portal Web Application.
+👨‍💼 Admin Dashboard
+Admin Dashboard – View 1
+![Admin Dashboard 1](assets/Admin dashboard1.png)
+
+Admin Dashboard – View 2
+![Admin Dashboard 2](assets/Admin dashboard2.png)
+
+🧑‍💼 Employer Interface
+Employer Dashboard
+![Employer Dashboard](assets/Employer dashboard.png)
+
+New Job Posting – Page 1
+![New Job Posting Page 1](assets/New job posting page1.png)
+
+New Job Posting – Page 2
+![New Job Posting Page 2](assets/New job posting page2.png)
+
+Job Editing – Page 1
+![Job Editing Page 1](assets/Job editing page1.png)
+
+Job Editing – Page 2
+![Job Editing Page 2](assets/Job editing page2.png)
+
+👤 Job Seeker Interface
+Job Seeker Dashboard
+![Job Seeker Dashboard](assets/Job seeker dashboard.png)
+
+🔐 Authentication Screens
+Login Page
+![Login Page](assets/Login Page.png)
+
+Register Page – Step 1
+![Register Page 1](assets/Register Page1.png)
+
+Register Page – Step 2
+![Register Page 2](assets/Register Page2.png)
+
+
 
 

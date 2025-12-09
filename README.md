@@ -35,6 +35,7 @@ Manage all users
 Manage job listings
 
 🧱 Tech Stack
+
 Backend
 
 Python (Flask)

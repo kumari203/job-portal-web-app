@@ -198,17 +198,21 @@ Login Page
 
 ![Login Page](assets/Login Page.png)
 
-Register Page – Step 1
+Register Page 1
 
-![Register Step 1](assets/Register Page1.png)
+![Register Page 1](assets/Register Page1.png)
 
-Register Page – Step 2
+Register Page 2
 
-![Register Step 2](assets/Register Page2.png)
+![Register Page 2](assets/Register Page2.png)
 
 📬 Contact
 
-For any issues or suggestions, feel free to open an Issue on GitHub.
+Name:Rokkam Ratna Kumari
+
+Email:rokkamratnakumari@gmail.com
+
+
 
 
 
